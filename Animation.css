@@ -11,6 +11,7 @@ html,body {
   font-family: 'Kaisei Decol', serif;
 }
 
+
 /* header */
 
 header {
@@ -173,14 +174,18 @@ body:after {  /*擬似要素をつくる*/
 
 /* section */
 
-.hero {
-  margin: 300px 10%;
+.main {
   position: absolute;
   z-index: 3;
   color: white;
 }
 
+
 /* hero */
+
+.hero {
+  margin: 300px 10%;
+}
 
 .hero h1 {
   font-size: 32px;
@@ -255,14 +260,20 @@ padding: 0;
   opacity: 0.5;
 }
 
+/* 空白 */
+div {
+  height: 300px;
+}
+
+
 /* footer */
 
 footer {
   background: rgb(242, 203, 242);
-  padding: 64px 10%;
   width: 100%;
-  margin: 0;
   position: absolute;
+  right: 0;
+  left : 0;
   bottom: 0;
   z-index: 2;
   text-align: center;
