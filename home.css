@@ -45,7 +45,7 @@ a {
   color: white;
   text-decoration: none;
   padding: 8px 16px;
-  font-size: 20px;
+  font-size: 30px;
   /* text-align: right; */
 
 }
@@ -203,26 +203,28 @@ body:after {  /*擬似要素をつくる*/
 /* hero */
 
 .hero {
-  margin: 300px 10%;
+  margin: 300px 20%;
 }
 
 .hero h1 {
-  font-size: 32px;
+  font-size: 48px;
   text-shadow: 1px 2px 3px #e3e3e3 ;
   text-align: center;
 }
 
 
 .hero p {
+  font-size: 20px;
   padding: 0;
 }
 
 
 .horm {
-margin:  200px 10%;
+margin:  200px 20%;
 border: 0;
 padding: 0;
-
+/* display: flex; */
+justify-content: center;
 }
 
 .icon {
@@ -233,12 +235,12 @@ padding: 0;
   border-radius: 50%;
   border: 2px solid honeydew;
   margin: 40px auto 160px;
+  display: flex;
 }
 
-.icon p {
+.icon a {
   text-shadow: 1px 2px 3px #e3e3e3 ;
   text-align: center;
-  font-size: 32px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -247,7 +249,8 @@ padding: 0;
   transform: translate(-50%,-50%);
   margin:0;/*余計な隙間を除く*/
   padding:0;/*余計な隙間を除く*/
-  font-size: 40px;/*サイズ*/
+  font-size: 48px;/*サイズ*/
+  text-decoration: none;
 }
 
 .icon img{
@@ -259,22 +262,82 @@ padding: 0;
   object-fit: cover;
 }
 
+.icon img:hover {
+  opacity: 0.5;
+}
+
+.contents {
+  display: flex;
+  gap: 32px;
+  /* align-content: center; */
+  align-items: center;
+  flex-direction: row-reverse;
+  /* flex-wrap: nowrap; */
+  padding: 0px;
+  max-width: 100%;
+      animation-name:contentsAnime;
+    animation-duration: 3s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+
+.contents2 {
+  display: flex;
+  gap: 32px;
+  /* align-content: center; */
+  align-items: center;
+  flex-direction: row;
+  /* flex-wrap: nowrap; */
+  padding: 0px;
+  max-width: 100%;
+  animation-name:contents2Anime;
+  animation-duration: 3s;
+  animation-fill-mode:forwards;
+  opacity:0;
+}
+
+  @keyframes contentsAnime{
+    from {
+      opacity: 0;
+    transform: translateX(-200px);
+    }
+  
+    to {
+      opacity: 1;
+    transform: translateX(0);
+    }
+  }
+
+    
+    @keyframes contents2Anime{
+      from {
+        opacity: 0;
+      transform: translateX(200px);
+      }
+    
+      to {
+        opacity: 1;
+      transform: translateX(0);
+      }
+    }
+
+
 .content {
   text-align: center;
   margin-bottom: 24px;
+  margin: 0px 10px;
 }
 
 .content h1{
-  font-size: 50px;
+  font-size: 48px;
 }
 
 .content p2 {
-  font-size: 24px;
-  
+  font-size: 32px;
 }
 
 .content p3{
-  font-size: 16px;
+  font-size: 20px;
   color: #505050;
   opacity: 0.5;
 }
@@ -288,6 +351,7 @@ padding: 0;
 /* footer */
 
 footer {
+  height: 10%;
   background: rgb(242, 203, 242);
   width: 100%;
   position: absolute;
@@ -295,5 +359,9 @@ footer {
   left : 0;
   bottom: 0;
   z-index: 2;
+  text-align: center;
+}
+
+footer p {
   text-align: center;
 }
