@@ -219,12 +219,16 @@ body:after {  /*擬似要素をつくる*/
 }
 
 
-.horm {
+.features {
 margin:  200px 20%;
 border: 0;
 padding: 0;
 /* display: flex; */
 justify-content: center;
+/* width: calc(100% - 32px); */
+/* margin: 0 auto; */
+/* max-width: 800px; */
+
 }
 
 .icon {
@@ -266,60 +270,46 @@ justify-content: center;
   opacity: 0.5;
 }
 
-.contents {
+
+.animate {
   display: flex;
   gap: 32px;
-  /* align-content: center; */
   align-items: center;
   flex-direction: row-reverse;
-  /* flex-wrap: nowrap; */
   padding: 0px;
   max-width: 100%;
-      animation-name:contentsAnime;
-    animation-duration: 3s;
-    animation-fill-mode:forwards;
-    opacity:0;
+  /* opacity:0; */
+  transform: translateY(100px);
+  transition: opacity .5s, transform .5s;
 }
 
-.contents2 {
-  display: flex;
-  gap: 32px;
-  /* align-content: center; */
-  align-items: center;
-  flex-direction: row;
-  /* flex-wrap: nowrap; */
-  padding: 0px;
-  max-width: 100%;
-  animation-name:contents2Anime;
-  animation-duration: 3s;
-  animation-fill-mode:forwards;
-  opacity:0;
+.animate.slide-from-left {
+  transform: translateX(-100px);
 }
 
-  @keyframes contentsAnime{
-    from {
-      opacity: 0;
-    transform: translateX(-200px);
-    }
-  
-    to {
-      opacity: 1;
-    transform: translateX(0);
-    }
-  }
+.animate.slide-from-right {
+  transform: translateX(100px);
+}
 
-    
-    @keyframes contents2Anime{
-      from {
-        opacity: 0;
-      transform: translateX(200px);
-      }
-    
-      to {
-        opacity: 1;
-      transform: translateX(0);
-      }
-    }
+.animate.appear {
+  opacity: 1;
+  transform: none;
+}
+
+.animate.delay {
+  transition-delay: .10s;
+}
+
+.animate.delay-more {
+  transition-delay: .10s;
+}
+
+
+.contents.appear {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 
 
 .content {
@@ -352,7 +342,7 @@ justify-content: center;
 
 footer {
   height: 10%;
-  background: rgb(242, 203, 242);
+  background:  #deb887	;
   width: 100%;
   position: absolute;
   right: 0;
