@@ -337,6 +337,28 @@ justify-content: center;
   margin: 300px;
 }
 
+.pair{
+  position: absolute;
+  right: 0px;
+  top: 2320px;
+  z-index: 4;
+}
+
+.pair img {
+  transform-origin: center bottom;
+  animation: yurayura 3s infinite;
+}
+
+@keyframes yurayura {
+  0% , 100%{
+    transform: rotate(5deg);
+  }
+  50%{
+    transform: rotate(-5deg);
+    }
+  }
+
+
 
 /* footer */
 
