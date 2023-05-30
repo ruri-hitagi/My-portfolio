@@ -1,39 +1,55 @@
-'use strict'
+// 'use strict';
 
 {
-  const target = document.querySelector(".icon");
+  // Intersection Observer API
 
-  function callback() {
-    console.log('fired!');
+  function inViewCallback(entries, obs) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting ){
+              // isInstersecting
+        console.log("クロスしてない");
+        return;
+      }
+      console.log("クロスした");
+      entry.target.classList.add('appear');
+      obs.unobserve(entry.target);
+    });
   }
 
-  const observer = new IntersectionObserver(callback);
-
-  observer.observe(target);
-}
-
-window.addEventListener("load", () => {
-  // boxをすべて取得
-  const boxes = document.querySelectorAll(".icon");
-  // scrollイベントをセット
-  window.addEventListener("scroll", showBoxes);
-
-  showBoxes();
-
-  function showBoxes() {
-    // 発火位置
-    const triggerBottom = (window.innerHeight / 5) * 4;
-
-    boxes.forEach((icon) => {
-      // boxの頭部分の座標を取得
-      const iconTop = contents.getBoundingClientRect().top;
-
-      // boxの頭部分が発火位置を超えたら
-      if (iconTop < triggerBottom) {
-        icon.classList.add("show");
+  function onScrollCallback(entries) {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting) {
+        header.classList.add('scrolled');
+        toTop.classList.add('scrolled');
       } else {
-        icon.classList.remove("show");
+        header.classList.remove('scrolled');
+        toTop.classList.remove('scrolled');
       }
     });
   }
-})
+
+  // const header = document.querySelector('header');
+  // const toTop = document.getElementById('to_top');
+
+  const inViewObserver = new IntersectionObserver(inViewCallback, {
+    threshold: 0.7,
+  });
+
+  document.querySelectorAll('.animate').forEach(el => {
+    console.log(el);
+    inViewObserver.observe(el);
+  });
+
+  const onScrollObserver = new IntersectionObserver(onScrollCallback); 
+  onScrollObserver.observe(document.getElementById('target'));
+
+  toTop.addEventListener('click', e =>{
+    e.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      behavior:'smooth',
+    });
+  });
+}
+
