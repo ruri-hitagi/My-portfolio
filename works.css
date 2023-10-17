@@ -1,0 +1,216 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&display=swap");
+
+/*========= 背景動画設定のCSS ===============*/
+
+/*backvideo設定*/
+.backvideo{
+    position: relative;/*h1の中央寄せ配置の起点とするためのrelative*/
+    height: 200px;/*高さを全画面にあわせる*/
+} 
+
+#video-area{
+    position: fixed;
+    z-index: -1;/*最背面に設定*/
+    top: 0;
+    right:0;
+    left:0;
+    bottom:0;
+    overflow: hidden;
+}
+
+#video {
+    /*天地中央配置*/
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*縦横幅指定*/
+    width: 177.77777778vh; /* 16:9 の幅→16 ÷ 9＝ 177.77% */
+    height: 56.25vw; /* 16:9の幅 → 9 ÷ 16 = 56.25% */
+    min-height: 100%;
+    min-width: 100%;
+}
+
+/*見出し設定*/
+
+body:after {  /*擬似要素をつくる*/
+  position: fixed;  /*固定配置*/
+  top: 0; left: 0;  /*左上に固定*/
+  width: 100%; height: 100%;  /*画面全体を覆う*/
+  content: "";
+  background: #f89174;  /*保険用*/
+  background: -moz-linear-gradient(top,  rgba(239, 171, 254, 0.123) ,rgba(7, 1, 86, 0.16));/*古いFireFox向け*/
+  background: -webkit-linear-gradient(top, rgba(239, 171, 254, 0.123) ,rgba(7, 1, 86, 0.16));/*古いSafari・Chrome向け*/
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=' rgba(239, 171, 254, 0.123)', endColorstr='rgba(7, 1, 86, 0.16)',GradientType=0 );/*IE9以下への対応*/
+  background: linear-gradient( rgba(239, 171, 254, 0.123) ,rgba(7, 1, 86, 0.16));  /*正規のプロパティ*/
+}
+
+/*========= ヘッダーのCSS ===============*/
+
+header {
+  background:linear-gradient( rgb(0, 0, 0) ,rgba(7, 1, 86, 0));
+  width: 100%;
+  position: fixed;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+.right {
+  margin: 0 0 0 auto;
+}
+
+h1 {
+  margin: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  font-size: 20px;
+  font-family: 'Kaisei Decol', serif;
+}
+
+#midasi{
+    font-size: 60px;
+    /*要素の配置*/
+    position:absolute;
+    /*要素を天地中央寄せ*/
+    top: 150px;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    /*見た目の調整*/
+    color:#fff;
+    text-shadow: 0 0 15px #666;
+    z-index: 5;
+    font-family: 'Kaisei Decol', serif;
+}
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+  width: 100vw;
+  margin:0 auto;
+  z-index: 10;
+}
+
+.slider img {
+  width:60vw;/*スライダー内の画像を60vwにしてレスポンシブ化*/
+  height:auto;
+}
+
+.slider .slick-slide {
+transform: scale(0.8);/*左右の画像のサイズを80%に*/
+transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+opacity: 0.5;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+  position: absolute;/*絶対配置にする*/
+  top: 42%;
+  cursor: pointer;/*マウスカーソルを指マークに*/
+  outline: none;/*クリックをしたら出てくる枠線を消す*/
+  border-top: 2px solid white;/*矢印の色*/
+  border-right: 2px solid #fff;/*矢印の色*/
+  height: 15px;
+  width: 15px;
+  z-index: 9;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+  left: 17%;
+  transform: rotate(-135deg);
+  z-index: 9;
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+  right: 17%;
+  transform: rotate(45deg);
+  z-index: 9;
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+  text-align:center;
+margin:20px 0 0 0;
+}
+
+.slick-dots li {
+  display:inline-block;
+margin:0 5px;
+}
+
+.slick-dots button {
+  color: transparent;
+  outline: none;
+  width:8px;/*ドットボタンのサイズ*/
+  height:8px;/*ドットボタンのサイズ*/
+  display:block;
+  border-radius:50%;
+  background:#7a7a7bcd;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+  background: white;/*ドットボタンの現在地表示の色*/
+}
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+
+h2,p {
+  text-align:center;
+  padding:20px;
+  color: #fff;
+}
+
+ul{
+margin:0;
+padding: 0;
+list-style: none;
+}
+
+a{
+color: #dfdddd;
+}
+
+a:hover,
+a:active{
+text-decoration: none;
+}
+
+footer {
+  height: 150px;
+  background: linear-gradient(rgba(7, 1, 86, 0), rgb(0, 0, 0) );
+  width: 100%;
+  position: absolute;
+  right: 0;
+  left : 0;
+  bottom: 0;
+  z-index: 2;
+  text-align: center;
+}
+
+footer p {
+  text-align: center;
+}

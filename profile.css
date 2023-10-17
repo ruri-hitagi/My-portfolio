@@ -1,0 +1,194 @@
+@charset "uft-8";
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&display=swap");
+@font-face {
+  /*   適用させるフォント名 → 間違っていると反映されないので注意  */
+  font-family: "うずらフォント";
+  /*   .otf, .ttfの拡張子がついているファイルがフォントファイルである。   */
+ /*   フォントファイルが何処場所にあるのか : パスを書いてあげる   */
+  src: url(uzura.ttf);
+}
+/*=============== header ===============*/
+/*=============== ===============*/
+header {
+  background: rgba(255, 255, 255, 0.483);
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  top: 0;
+}
+
+h1{
+  margin: 0;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+.right {
+  margin: 0 0 0 auto;
+}
+
+
+a {
+  color: #cc7455;
+  text-decoration: none;
+  padding: 8px 16px;
+  font-size: 20px;
+  /* text-align: right; */
+}
+
+/*=============== 中 ===============*/
+body {
+  margin: 0;
+  width: 100vw;
+}
+
+.midasi{
+  padding: 5% 0;
+}
+
+.rogo img{
+  margin: auto;
+  padding-left: 36%;
+  padding-top: 5%;
+}
+
+.fox {
+  width: 400px;
+  height: 400px;
+  border-radius: 50px;
+  display: flex;
+  padding-left: 15%;
+  padding-top: 50px;
+  padding-bottom: 150px;
+  align-items: center;
+}
+.fox img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}
+.fox h1{
+  font-family: "うずらフォント";
+  font-size: 150px;
+  color: #cc7455;
+  margin: 0 0 0 200px;
+}
+
+.syoukai {
+  background-color: #F3F2E6;
+  font-family: "うずらフォント";
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-weight: 400;
+  color: #cc7455;
+}
+
+.syoukai h2 {
+  font-size: 60px;
+  text-align: center;
+}
+
+.syoukai p {
+  font-size: 20px;
+  text-align: center;
+  width: auto;
+  font-weight: 400;
+  max-width: 100%;
+  height: auto;
+  line-height: 1.4;
+  margin: 0px 0px 93px 0px;
+  justify-content: flex-start;
+}
+
+.qa {
+  margin: 0;
+  padding: 0;
+  background-color: #cc7455;
+  font-family: "うずらフォント";
+  width: 100%;
+  color: #f2f2f2;
+}
+
+.qa h2{
+  text-align: center;
+  font-size: 60px;
+  margin-bottom: 200px;
+  margin-top: 0;
+  padding-top: 100px;
+}
+
+.flex {
+  display: flex;
+  width:80%;
+  padding: 0px 50px 100px 150px;
+}
+
+.flex .image{
+  width: 300px;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+.flex .image::before {
+  content: "";
+  display: block;
+  padding: 58%;
+}
+.flex .image img {
+  padding-top: 50px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* padding: 0 0 0 100px; */
+}
+
+.flex .right {
+  margin: 0 0 0 100px;
+  padding: 0;
+}
+.flex .left{
+  margin: 0 100px 0 0;
+  padding: 0;
+}
+
+.flex .title {
+  margin: 0 0 50px 150px;
+  padding: 0;
+  font-weight: bold;
+  font-size: 30px;
+}
+.flex .text{
+  font-size: 20px;
+  width: 600px;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+
+/*=============== footer ===============*/
+
+footer {
+  width: 100;
+  color: #f2f2f2;
+  padding: 100px 0 50px;
+}
+
+footer p {
+  margin: 0;
+  color: #000;
+  text-align: center;
+}

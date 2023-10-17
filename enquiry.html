@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ</title>
+  <link rel="stylesheet" href="enquiry.css">
+  <link rel="icon" href="シマエナガ-_1_.png">
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Contact Form</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+</head>
+
+
+
+<body>
+  <section class="backvideo">
+    <div id="video-area">
+      <video id="video"webkit-playsinline playsinline muted autoplay loop>
+    <!--
+          poster：動画ファイルが利用できない環境で代替表示される画像
+          webkit-playsinline：iOS 9までのSafari用インライン再生指定
+          playsinline：iOS 10以降のSafari用インライン再生指定
+          muted：音声をミュートさせる
+          autoplay：動画を自動再生させる
+          loop：動画をループさせる
+          controls：コントロールバーを表示する
+    -->
+    <source src="christmas_-_57046 (Original).mp4" type="video/mp4">
+    <source src="hosi/hosi.ogv" type="video/ogv">
+    <source src="hosi/hosi.webm" type="video/webm">
+    <p>動画を再生できる環境ではありません。</p>
+      </video>
+      <!--/video-area-->
+    </div>
+  </section>
+
+  <header>
+    <h1>
+      <a href="enquiry.html">
+        <img src="heder.png" alt="お問い合わせ" width="250" height="55">
+      </a>
+    </h1>
+    <div class="right">
+      <a href="home.html" title="ホーム">ホーム</a>
+      <a href="works.html" title="作品など">Works</a>
+      <a href="profile.html" title="自己紹介">私について</a>
+      <a href="enquiry.html" title="依頼受付">ご依頼</a>
+    </div>
+  </header>
+
+  <h2>CONTACT</h2>
+
+  <div class="contact-wrapper">
+
+  <form id="contact-form" class="form-horizontal" role="form">
+    <input type="hidden" name="contact_number">
+    <div class="form-group">
+      <div class="col-sm-12">
+        <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-12">
+        <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+      </div>
+    </div>
+
+    <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+
+    <button type="submit" value="send">SEND</button>
+    <!-- クリックで表示させるテキストにはhiddenクラスを付ける -->
+    <p id="btn-text" class="hidden">メールを送信しました。<br>返事の際はご記入のメールアドレスへと直接ご連絡します。</p>
+
+  </form>
+  </div>
+
+  <footer>
+
+  </footer>
+
+  <script src="enquiry.js"></script>
+</body>
+</html>
