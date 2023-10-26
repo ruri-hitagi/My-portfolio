@@ -110,7 +110,7 @@ body {
 }
 
 .qa {
-  margin: 0;
+  margin: 0 ;
   padding: 0;
   background-color: #cc7455;
   font-family: "うずらフォント";
@@ -128,8 +128,9 @@ body {
 
 .flex {
   display: flex;
-  width:80%;
-  padding: 0px 50px 100px 150px;
+  width: 80%;
+  padding-left: 20%;
+  padding-bottom: 150px;
 }
 
 .flex .image{
